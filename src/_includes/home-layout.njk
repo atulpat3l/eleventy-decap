@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,7 +10,15 @@
   <body>
     <h1>{{ title }}</h1>
     <br />
-    {{ content | safe }}
+    {% set postsCount = collections.posts | length %} {% set latestPostsCount =
+    postsCount %}
+<h1>
+Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif
+      %}
+</h1>
+
+    {% set postslist = collections.posts %} {% set postslistCounter = postsCount
+    %} {% include "postslist.njk" %}
 
     <script>
       if (window.netlifyIdentity) {

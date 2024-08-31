@@ -3,4 +3,5 @@ module.exports = {
     return `/post/${this.slugify(title)}/index.html`;
   },
   layout: "layout.njk",
+  tags: ["posts"],
 };
